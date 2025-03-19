@@ -4,6 +4,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.time.LocalDateTime;
+
 @Controller
 public class AppController {
     @GetMapping("/hello")
@@ -14,8 +16,9 @@ public class AppController {
     /*When the controller method is called, the model is populated with data that
     can be rendered by the view engine.*/
     public String sayHello(Model theModel){
-        theModel.addAttribute("theDate", java.time.LocalDateTime.now());
-        return "Hello Thymeleaf!";
+        theModel.addAttribute("theDate", LocalDateTime.now());
+        // Should match the Thymeleaf template name
+        return "hellothymeleaf";
     }
 
 }
