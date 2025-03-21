@@ -1,9 +1,9 @@
 package com.springboot.thymeleaf.controller;
 
-import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class HelloNameController {
@@ -15,12 +15,8 @@ public class HelloNameController {
 
     // controller method to process HTML form
     @RequestMapping("/process-form")
-    // HttpServletRequest request - holds HTML form data
-    // Container for the data added by programmer
-    public String helloName(HttpServletRequest request, Model model){
-        // read the request parameter from the HTML form
-        String theName = request.getParameter("userName");
-
+    // Assign theName to value of request parameter - userName
+    public String helloName(@RequestParam("userName") String theName, Model model){
         // convert the data to all caps
         String result = theName.toUpperCase();
 
