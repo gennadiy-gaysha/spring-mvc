@@ -23,9 +23,7 @@
 
             <select th:field="*{country}" class="form-select" aria-label="Choose your residence">
                 <option value="" selected>Choose your residence</option>
-                <option th:value="Ukraine">Ukraine</option>
-                <option th:value="Germany">Germany</option>
-                <option th:value="USA">USA</option>
+                <option th:each="country: ${countries}" th:value="${country}" th:text="${country}"></option>>
             </select>
 
             <button type="submit" class="btn btn-primary mt-3">Submit</button>
