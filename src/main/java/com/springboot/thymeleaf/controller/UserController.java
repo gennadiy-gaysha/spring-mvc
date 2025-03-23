@@ -15,11 +15,14 @@ public class UserController {
     @Value("${countries}")
     List<String> countries;
 
+    @Value("${languages}")
+    List<String> languages;
 
     @GetMapping("/user-form")
     public String showUserForm(Model model){
         model.addAttribute("user", new User());
         model.addAttribute("countries", countries);
+        model.addAttribute("languages", languages);
         return "user-form";
     }
 

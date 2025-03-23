@@ -11,9 +11,16 @@
 <body>
 <div class="container d-flex justify-content-center mt-5">
     <!-- Bootstrap Card -->
-    <div class="card bg-light p-4 text-center w-60">
-        <h3 class="text-primary">The User is confirmed: <span th:text="${user.firstName} + ' ' + ${user.lastName}"></span></h3>
-        <h3 class="text-primary">Residence: <span th:text="${user.country}"></span></h3>
+    <div class="card bg-light p-4 text-left w-60">
+        <h3 class="text-primary">The User is confirmed: <span
+                th:text="${user.firstName} + ' ' + ${user.lastName}"
+                style="color:green;"></span></h3>
+        <h3 class="text-primary">Residence: <span
+                th:text="${user.country}"
+                style="color:green;"></span></h3>
+        <h3 class="text-primary">Favourite language: <span
+                th:text="${user.favouriteLanguage}"
+                style="color:green;"></span></h3>
     </div>
 </div>
 </body>

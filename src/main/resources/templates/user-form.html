@@ -14,17 +14,33 @@
         <form th:action="@{/processed-user-form}" th:object="${user}" method="POST">
             <div class="mb-3">
                 <label for="firstNameInput" class="form-label">Input your first name</label>
-                <input type="text" th:field="${user.firstName}" class="form-control" id="firstNameInput">
+                <input type="text" th:field="${user.firstName}" class="form-control" id="firstNameInput"
+                       placeholder="First name">
             </div>
             <div class="mb-3">
                 <label for="lastNameInput" class="form-label">Input your last name</label>
-                <input type="text" th:field="${user.lastName}" class="form-control" id="lastNameInput">
+                <input type="text" th:field="${user.lastName}" class="form-control" id="lastNameInput"
+                       placeholder="Last name">
             </div>
 
-            <select th:field="*{country}" class="form-select" aria-label="Choose your residence">
+            <!--Dropdown-list-->
+            <select th:field="*{country}" class="form-select mb-3" aria-label="Choose your residence">
                 <option value="" selected>Choose your residence</option>
-                <option th:each="country: ${countries}" th:value="${country}" th:text="${country}"></option>>
+                <option th:each="country: ${countries}" th:value="${country}" th:text="${country}"></option>
+                >
             </select>
+
+            <!--Radio-buttons-->
+            <p>Choose your favourite programming language:</p>
+            <div class="form-check" th:each="favouriteLanguage: ${languages}">
+                <input class="form-check-input" type="radio"
+                       th:field="*{favouriteLanguage}"
+                       th:value="${favouriteLanguage}"
+                       th:id="'radio-' + ${favouriteLanguage}">
+                <label class="form-check-label"
+                       th:for="'radio-' + ${favouriteLanguage}"
+                       th:text="${favouriteLanguage}"></label>
+            </div>
 
             <button type="submit" class="btn btn-primary mt-3">Submit</button>
         </form>
