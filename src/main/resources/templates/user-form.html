@@ -20,7 +20,15 @@
                 <label for="lastNameInput" class="form-label">Input your last name</label>
                 <input type="text" th:field="${user.lastName}" class="form-control" id="lastNameInput">
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+
+            <select th:field="*{country}" class="form-select" aria-label="Choose your residence">
+                <option value="" selected>Choose your residence</option>
+                <option th:value="Ukraine">Ukraine</option>
+                <option th:value="Germany">Germany</option>
+                <option th:value="USA">USA</option>
+            </select>
+
+            <button type="submit" class="btn btn-primary mt-3">Submit</button>
         </form>
     </div>
 </div>
