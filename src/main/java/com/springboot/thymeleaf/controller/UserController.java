@@ -15,6 +15,9 @@ public class UserController {
     @Value("${countries}")
     List<String> countries;
 
+    @Value("${systems}")
+    List<String> systems;
+
     @Value("${languages}")
     List<String> languages;
 
@@ -23,6 +26,7 @@ public class UserController {
         model.addAttribute("user", new User());
         model.addAttribute("countries", countries);
         model.addAttribute("languages", languages);
+        model.addAttribute("systems", systems);
         return "user-form";
     }
 

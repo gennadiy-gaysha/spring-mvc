@@ -42,6 +42,19 @@
                        th:text="${favouriteLanguage}"></label>
             </div>
 
+            <!--Check-boxes-->
+            <p>Choose your favourite operating system(s):</p>
+            <div class="form-check" th:each="tempSystem:${systems}">
+                <input class="form-check-input" type="checkbox"
+                       th:field="*{favouriteSystems}"
+                       th:value="${tempSystem}"
+                       th:id="'check-' + ${tempSystem}">
+                <label class="form-check-label"
+                       th:for="'check-' + ${tempSystem}"
+                       th:text="${tempSystem}"></label>
+                </label>
+            </div>
+
             <button type="submit" class="btn btn-primary mt-3">Submit</button>
         </form>
     </div>

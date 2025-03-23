@@ -5,6 +5,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.List;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -14,4 +16,5 @@ public class User {
     private String lastName;
     private String country;
     private String favouriteLanguage;
+    private List<String> favouriteSystems;
 }

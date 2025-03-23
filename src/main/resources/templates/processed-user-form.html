@@ -21,6 +21,14 @@
         <h3 class="text-primary">Favourite language: <span
                 th:text="${user.favouriteLanguage}"
                 style="color:green;"></span></h3>
+        <h3 class="text-primary">Favourite OS System(s):
+            <ul>
+                <li
+                        th:each="tempSystem:${user.favouriteSystems}"
+                        th:text="${tempSystem}"
+                        style="color:green;"></li>
+            </ul>
+        </h3>
     </div>
 </div>
 </body>
